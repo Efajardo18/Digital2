@@ -1,0 +1,41 @@
+SETUP
+	TRISA   = 0b00001011;
+	TRISB   = 0b00000000;
+	TRISC   = 0b00000000;
+	TRISD   = 0b00000000;
+	ANSEL   = 0b00000011;
+	ANSELH  = 0b00000000;
+	PORTA   = 0;
+	PORTB   = 0;
+	PORTC   = 0;
+	PORTD   = 0;
+	INTCON  = 0b11000000;	//GIE, PEIE
+	PIE1    = 0b01000010;	//ADIE  activo
+	IOCB    = 0b00000011;
+	ADCON1  = 0b10000000;
+	ADCON0  = 0b00000001;   //ACTIVAMOS el canal 0 y Habilitamos la conversión A/D
+	T2CON   = 0b00000110;
+
+ISR
+	if  (PIR1bits.ADIF==1){
+        	//comprobar si se encuentra activo el canal AN00:
+			UWU=ADRESH;
+	        	PIR1bits.ADIF=0;
+        		ADCON0=0b00000111; //cambiamos a canal 01
+		//ejecutar el cambio de canal de AN01
+			OWO=ADRESH;
+			PIR1bits.ADIF=0;
+			ADCON0=0b00000011; //cambiamos a canal 00
+
+MAIN 
+	//Enviar cadena para iniciar comunicación
+	while(1){
+		//llamar librería para conversión de un adc a legible por LCD
+		PORTD= 0b0011 xxxx // datos de la conversión
+		//chequear entrada de datos
+			switch case
+				aumentar contador
+				disminuir contador	
+
+	}	
+		
