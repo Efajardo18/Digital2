@@ -1,0 +1,29 @@
+void SETUP (void){
+	PORTA = 0;
+	PORTB = 0;
+	PORTC = 0;
+	PORTD = 0;
+	TRISA = 0b00001011;
+	TRISB = 0;
+	TRISC = 0;
+	TRISD = 0;
+	ANSEL = 0b00001000;
+	ANSELH = 0;
+	ACTIVAR GIE
+	ACTIVAR INTERRUPCIONES POR ADC
+}
+
+void main (void){
+	if(PORTAbits.A0 == 1){
+		PORTB=PORTB+1;
+		
+	}
+	if(PORTAbits.A1 == 1){
+		PORTB=PORTB-1;
+	}
+}
+	
+ISR{
+	MOVFW REGISTRO_DE_ADC; 
+	MOVWF VARIABLE_ADC;
+}
