@@ -17,7 +17,7 @@
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
 #pragma config BOREN = OFF      // Brown Out Reset Selection bits (BOR disabled)
 #pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
-#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is enabled)
+#pragma config FCMEN = OFF       // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is enabled)
 #pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3 pin has digital I/O, HV on MCLR must be used for programming)
 
 // CONFIG2
@@ -29,19 +29,16 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include "tablon.h"
 
-#define _XTAL_FREQ 8000000
-int xd;
-
-void main(void) {
-    setup;
-    while(1){
-        
-    }
-    return;
-}
+#define _XTAL_FREQ 250000
+uint8_t xd;
+uint8_t GARY1;
+uint8_t GARY2;
 
 void setup(void) {
+    xd      = 0;
     TRISA   = 0b00000000;
     TRISB   = 0b00001011;
     TRISC   = 0b00000000;
@@ -51,24 +48,58 @@ void setup(void) {
     PORTA   = 0;
     PORTB   = 0;
     PORTC   = 0;
-    PORTD   = 0;
+    PORTD   = 255;
     INTCON	= 0b11001000;	//GIE, PEIE, RBIE activos
-    PIE1	= 0b01000000;	//ADIE  activo
+    PIE1	= 0b01000010;	//ADIE  activo
+    PR2     = 0b11111111;   //ESTABLECEMOS EL MAXIMO AL TMR2
     IOCB    = 0b00000011;
-    ADCON0  = 0b00100111;   //ACTIVAMOS el canal 9 y el bit GO
     ADCON1  = 0b10000000;
+    ADCON0  = 0b00100101;   //ACTIVAMOS el canal 9 y el bit GO
+    T2CON   = 0b00000110;
     return;
 }
 
-void __interrupt ISR(void){
+void main(void) {
+    setup();
+    ADCON0bits.GO_DONE =1;
+    while(1){
+        if (PORTCbits.RC2==1){
+            GARY1=xd&0b00001111;
+            tabla(GARY1);
+        }
+        if (PORTCbits.RC3==1){
+            GARY2=xd>>4;
+            tabla(GARY2);
+        }
+    }
+    return;
+}
+
+void __interrupt() ISR(void){
     if  (PIR1bits.ADIF==1){
         xd=ADRESH;
         PIR1bits.ADIF=0;
-        ADCON0 =0b00100111; //ni idea cual de la lista es el GO/~DONE
+        ADCON0=0b00100111; //ni idea cual de la lista es el GO/~DONE
     }
-    else if (INTCONbits.RBIF==1){
+    if (INTCONbits.RBIF==1){
         if(PORTBbits.RB0==1){
-            
+            PORTA++;
+            INTCONbits.RBIF=0;
+        }
+        if(PORTBbits.RB1==1){
+            PORTA--;
+            INTCONbits.RBIF=0;
+        }
+    }
+    if (PIR1bits.TMR2IF==1){
+        if(PORTCbits.RC2==1){
+            PORTCbits.RC2=0;
+            PORTCbits.RC3=1;
+            PIR1bits.TMR2IF=0;
+        }else{
+            PORTCbits.RC3=0;
+            PORTCbits.RC2=1;
+            PIR1bits.TMR2IF=0;
         }
     }
 }
