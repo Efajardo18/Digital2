@@ -30,28 +30,65 @@
 #include <xc.h>
 #include <stdint.h>
 
+#define _XTAL_FREQ 8000000
+
 uint8_t lmao;
 uint8_t t1;
 uint8_t t2;
 
 void setup(void){
-    TRISA   = 0b00000011;
+    lmao    = 0x00;
+    TRISA   = 255;
+    TRISB   = 0b00000000;
+    TRISC   = 0b00000000;
     TRISD   = 0b00000000;
     ANSEL   = 0b00000011;
     ANSELH  = 0b00000000;
     PORTD   = 0b00000000;
     INTCON  = 0b11000000;
-    PIE1    = 0b01000000;
+    PIE1    = 0b01000010;
     ADCON0  = 0b00000001;
     ADCON1  = 0b00000000;
-                            
+    PR2     = 255;
+    T2CON   = 0b00010110;
+    return;   
 }
 
 void main(void) {
-    
+    setup();
+    while(1){
+        __delay_ms(10);
+        if(ADCON0bits.GO==0){
+            ADCON0bits.GO=1;
+        }
+        PORTB=t1;
+        PORTC=t2;
+    }
     return;
 }
 
 void __interrupt() ISR (void){
+    if(PIR1bits.ADIF==1){
+        if(ADCON0==0b00000001){
+            t1=ADRESH;
+            PIR1bits.ADIF=0;
+        }
+        else{
+            t2=ADRESH;
+            PIR1bits.ADIF=0;
+        }
+    }
+    if(PIR1bits.TMR2IF==1){
+        if(ADCON0==0b00000001){
+            ADCON0=0b00000101;
+            PIR1bits.TMR2IF=0;
+            TMR2=0;
+        }
+        else{
+            ADCON0=0b00000001;
+            PIR1bits.TMR2IF=0;
+            TMR2=0;
+        }
+    }
     
 }
