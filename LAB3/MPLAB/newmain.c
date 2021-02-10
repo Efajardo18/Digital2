@@ -47,8 +47,8 @@
 
 
 uint8_t lmao;
-int t1;
-int t2;
+uint8_t t1;
+uint8_t t2;
 
 void setup(void){
     t1      = 0;
@@ -72,11 +72,13 @@ void setup(void){
 void main(void) {
     setup();
     Lcd_Init();
+    char s[16];
     while(1){
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("V1  V2  CONT");
         Lcd_Set_Cursor(2,1);
-        sprintf(s,"%u   %u",t1, t2);
+        sprintf(s," %3i   %3i",t1, t2);
+        Lcd_Write_String(s);
         __delay_ms(10);
         if(ADCON0bits.GO==0){
             ADCON0bits.GO=1;
