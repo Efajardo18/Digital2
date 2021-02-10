@@ -27,27 +27,42 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+#define _XTAL_FREQ 8000000
+#define RS RE1
+#define EN RE2
+#define D0 RD0
+#define D1 RD1
+#define D2 RD2
+#define D3 RD3
+#define D4 RD4
+#define D5 RD5
+#define D6 RD6
+#define D7 RD7
+
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
+#include "lcdlib.h"
 
-#define _XTAL_FREQ 8000000
+
 
 uint8_t lmao;
-uint8_t t1;
-uint8_t t2;
+int t1;
+int t2;
 
 void setup(void){
-    lmao    = 0x00;
+    t1      = 0;
+    t2      = 0;
     TRISA   = 255;
-    TRISB   = 0b00000000;
     TRISC   = 0b00000000;
     TRISD   = 0b00000000;
+    TRISE   = 0b00000000;
     ANSEL   = 0b00000011;
     ANSELH  = 0b00000000;
     PORTD   = 0b00000000;
-    INTCON  = 0b11000000;
-    PIE1    = 0b01000010;
-    ADCON0  = 0b00000001;
+    INTCON  = 0b11000000; //GIE, PEIE ACTIVOS
+    PIE1    = 0b01000010; //ADIE, TMR2IE ACTIVOS
+    ADCON0  = 0b00000001; 
     ADCON1  = 0b00000000;
     PR2     = 255;
     T2CON   = 0b00010110;
@@ -56,13 +71,16 @@ void setup(void){
 
 void main(void) {
     setup();
+    Lcd_Init();
     while(1){
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("V1  V2  CONT");
+        Lcd_Set_Cursor(2,1);
+        sprintf(s,"%u   %u",t1, t2);
         __delay_ms(10);
         if(ADCON0bits.GO==0){
             ADCON0bits.GO=1;
         }
-        PORTB=t1;
-        PORTC=t2;
     }
     return;
 }
