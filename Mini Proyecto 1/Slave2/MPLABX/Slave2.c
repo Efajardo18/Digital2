@@ -4,7 +4,7 @@
  *
  * Created on 22 de febrero de 2021, 11:03 AM
  */
-#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -27,20 +27,25 @@
 #include <xc.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "spi.h"
+
+uint8_t putu;
+uint8_t tempi;
 
 void setup(void);
 
 void main(void) {
     setup();
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     while(1){
-        __delay_ms(10);
+        PORTD=tempi;
     }
     return;
 }
 
 void setup(void) {
-    TRISA   = 0b00000000;
-    TRISB   = 0b00000011;
+    TRISA   = 0b00100000;
+    TRISB   = 0b00000011;   //RB0 Y RB1 ESTABLECIDAS COMO ENTRADAS
     TRISC   = 0b00000000;
     TRISD   = 0b00000000;
     ANSEL   = 0b00000000;
@@ -48,19 +53,26 @@ void setup(void) {
     PORTA   = 0b00000000;
     PORTC   = 0b00000000;
     PORTD   = 0b00000000;
-    INTCON  = 0b10001000;
-    PIE1    = 0b00000000;
-    IOCB    = 0b00000011;
+    INTCON  = 0b11001000;   //GIE, PEIE Y RBIE ACTIVOS
+    PIE1    = 0b00001000;   //SSPIE ACTIVO
+    IOCB    = 0b00000011;   //HABILITADAS INTERRUPCIONES EN B PARA RB0 Y RB1
+    tempi   = 0;
 }
 
 void __interrupt() ISR (void){
     if(INTCONbits.RBIF==1){
-        INTCONbits.RBIF=0;
         if(PORTBbits.RB0==1){
-            PORTD++;
+            tempi++;
+            INTCONbits.RBIF=0;
         }
         if(PORTBbits.RB1==1){
-            PORTD--;
+            tempi--;
+            INTCONbits.RBIF=0;
         }
+    }
+    if(SSPIF == 1){
+        SSPIF = 0;
+        putu=spiRead();
+        spiWrite(PORTD);
     }
 }

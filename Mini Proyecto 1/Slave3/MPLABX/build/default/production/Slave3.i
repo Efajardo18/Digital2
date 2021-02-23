@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "Slave3.c" 2
 # 12 "Slave3.c"
-#pragma config FOSC = XT
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2757,15 +2757,93 @@ void GOCHK(void){
 }
 # 35 "Slave3.c" 2
 
+# 1 "./spi.h" 1
+# 15 "./spi.h"
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    if(sType & 0b00000100)
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
+    }
+    else
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
+
+    SSPCON = sType | sClockIdle;
+}
+
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF );
+}
+
+void spiWrite(char dat)
+{
+    SSPBUF = dat;
+}
+
+unsigned spiDataReady()
+{
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
+}
+
+char spiRead()
+{
+    spiReceiveWait();
+    return(SSPBUF);
+}
+# 36 "Slave3.c" 2
+
 
 uint8_t VADC;
-uint8_t map1;
-uint8_t map2;
+uint8_t datu;
 
 void setup(void);
 
 void main(void) {
     setup();
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     while(1){
         _delay((unsigned long)((10)*(8000000/4000.0)));
         GOCHK();
@@ -2783,14 +2861,14 @@ void main(void) {
 }
 
 void setup(void){
-    TRISA = 0b00001001;
+    TRISA = 0b00101001;
     TRISB = 0b00000000;
     TRISC = 0b00000000;
     TRISD = 0b00000000;
     ANSEL = 0b00000001;
     ANSELH = 0b00000000;
     INTCON = 0b11000000;
-    PIE1 = 0b01000000;
+    PIE1 = 0b01001000;
     ADCON0 = 0b01000001;
     ADCON1 = 0b00010000;
     PORTA = 0;
@@ -2802,9 +2880,12 @@ void setup(void){
 
 void __attribute__((picinterrupt(("")))) ISR (void){
     if(PIR1bits.ADIF==1){
-            PIR1bits.ADIF=0;
-            VADC=ADRESH;
-            map1=0;
-            PORTC=ADRESH;
+        PIR1bits.ADIF=0;
+        VADC=ADRESH;
+    }
+    if(SSPIF == 1){
+        SSPIF = 0;
+        datu=spiRead();
+        spiWrite(VADC);
     }
 }
