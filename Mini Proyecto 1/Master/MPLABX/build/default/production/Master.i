@@ -2961,11 +2961,109 @@ void ARRANQUE() {
 }
 # 48 "Master.c" 2
 
+# 1 "./UARTlib.h" 1
+char UART_Init(const long int baudrate){
+ unsigned int x;
+ x = (8000000 - baudrate*64)/(baudrate*64);
+ if(x>255){
+  x = (8000000 - baudrate*16)/(baudrate*16);
+  BRGH = 1;
+ }
+ if(x<256){
+   SPBRG = x;
+   SYNC = 0;
+   SPEN = 1;
+      TRISC7 = 1;
+      TRISC6 = 1;
+      CREN = 1;
+      TXEN = 1;
+   return 1;
+ }
+ return 0;
+}
+
+char UART_TX_Empty(){
+  return TRMT;
+}
+
+char UART_Data_Ready(){
+   return RCIF;
+}
+char UART_Read(){
+  while(!RCIF);
+  return RCREG;
+}
+
+void UART_Read_Text(char *Output, unsigned int length){
+ int i;
+ for(int i=0;i<length;i++)
+  Output[i] = UART_Read();
+}
+
+void UART_Write(char data){
+  while(!TRMT);
+  TXREG = data;
+}
+
+void UART_Write_Text(char *text){
+  int i;
+  for(i=0;text[i]!='\0';i++)
+   UART_Write(text[i]);
+}
+# 49 "Master.c" 2
+
+# 1 "./MAPS.h" 1
+
+
+
+
+uint8_t ascii(uint8_t datos) {
+    switch (datos) {
+        case 0x00:
+            return (0x30);
+
+        case 0x01:
+            return (0x31);
+
+        case 0x02:
+            return (0x32);
+
+        case 0x03:
+            return (0x33);
+
+        case 0x04:
+            return (0x34);
+
+        case 0x05:
+            return (0x35);
+
+        case 0x06:
+            return (0x36);
+
+        case 0x07:
+            return (0x37);
+
+        case 0x08:
+            return (0x38);
+
+        case 0x09:
+            return (0x39);
+
+    }
+}
+# 50 "Master.c" 2
+
 
 uint8_t SLAVE1;
 uint8_t SLAVE2;
 uint8_t SLAVE3;
-uint8_t DATAS;
+uint8_t DATAS1;
+uint8_t DATAS2;
+uint8_t DATAS3;
+uint8_t V1;
+uint8_t V2;
+uint8_t uwu1;
+uint8_t uwu2;
 
 void setup(void);
 
@@ -2974,25 +3072,53 @@ void main(void) {
     Lcd_Init();
     char s[16];
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    UART_Init(9600);
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("ADC   CONT  TEMP");
     while (1) {
-        PORTBbits.RB0=0;
+        PORTBbits.RB0 = 0;
         spiWrite(0);
-        SLAVE1=spiRead();
-        PORTBbits.RB0=1;
-        PORTBbits.RB1=0;
+        SLAVE1 = spiRead();
+        PORTBbits.RB0 = 1;
+
+        if(SLAVE1>=251){
+            V1 =5;
+            V2 =0;
+        }
+        else {
+            while(SLAVE1>=50){
+                V1++;
+                SLAVE1=SLAVE1-50;
+            }
+            while(SLAVE1>=5){
+                V2++;
+                SLAVE1=SLAVE1-5;
+            }
+        }
+
+        PORTBbits.RB1 = 0;
         spiWrite(255);
-        SLAVE2=spiRead();
-        PORTBbits.RB1=1;
-        PORTBbits.RB2=0;
+        SLAVE2 = spiRead();
+        PORTBbits.RB1 = 1;
+
+
+        UART_Write(SLAVE2);
+
+
+        PORTBbits.RB2 = 0;
         spiWrite(100);
-        SLAVE3=spiRead();
-        PORTBbits.RB2=1;
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("ADC CONT  TEMP");
-        Lcd_Set_Cursor(2,1);
-        sprintf(s," %3i   %3i   %3i",SLAVE1, SLAVE2, SLAVE3);
+        SLAVE3 = spiRead();
+        PORTBbits.RB2 = 1;
+
+
+        UART_Write(SLAVE3);
+
+
+        Lcd_Set_Cursor(2, 1);
+        sprintf(s, "%1i.%1iV  %3i  %3iC", V1, V2, SLAVE2, SLAVE3);
         Lcd_Write_String(s);
+        V1=0;
+        V2=0;
     }
     return;
 }
@@ -3008,12 +3134,12 @@ void setup(void) {
     PORTA = 0;
     PORTB = 0x0F;
     PORTD = 0;
+
     return;
 }
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
     if (SSPIF == 1) {
-        SSPIF=0;
+        SSPIF = 0;
     }
-# 122 "Master.c"
 }

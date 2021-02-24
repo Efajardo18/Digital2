@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>spi.h</itemPath>
       <itemPath>lcdlib.h</itemPath>
+      <itemPath>UARTlib.h</itemPath>
+      <itemPath>MAPS.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

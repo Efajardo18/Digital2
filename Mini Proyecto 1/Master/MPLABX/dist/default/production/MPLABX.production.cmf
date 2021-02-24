@@ -11,36 +11,39 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Olifa\AppData\Local\Temp\shqc.o
+$C:\Users\Olifa\AppData\Local\Temp\sbfo.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\MPLABX.production.o
-cinit CODE 0 F F A 2
-text1 CODE 0 19 19 188 2
-text2 CODE 0 4A3 4A3 12 2
-text3 CODE 0 3FD 3FD 25 2
-text4 CODE 0 3C1 3C1 3C 2
-text5 CODE 0 33F 33F 44 2
-text6 CODE 0 4D3 4D3 6 2
-text7 CODE 0 4C3 4C3 9 2
-text8 CODE 0 4CC 4CC 7 2
-text9 CODE 0 47A 47A 16 2
-text10 CODE 0 490 490 13 2
-text11 CODE 0 2B4 2B4 46 2
-text12 CODE 0 446 446 1A 2
-text13 CODE 0 422 422 24 2
-text14 CODE 0 2FA 2FA 45 2
-text15 CODE 0 460 460 1A 2
-text16 CODE 0 383 383 3E 2
-text17 CODE 0 4B5 4B5 E 2
-maintext CODE 0 1A1 1A1 92 2
-cstackCOMMON COMMON 1 70 70 B 1
-cstackBANK0 BANK0 1 20 20 2F 1
+cinit CODE 0 F F 10 2
+text1 CODE 0 1F 1F 188 2
+text2 CODE 0 679 679 12 2
+text3 CODE 0 5D3 5D3 25 2
+text4 CODE 0 597 597 3C 2
+text5 CODE 0 4D1 4D1 44 2
+text6 CODE 0 6B5 6B5 6 2
+text7 CODE 0 6A5 6A5 9 2
+text8 CODE 0 6AE 6AE 7 2
+text9 CODE 0 650 650 16 2
+text10 CODE 0 666 666 13 2
+text11 CODE 0 699 699 C 2
+text12 CODE 0 28C 28C DD 2
+text13 CODE 0 369 369 9D 2
+text14 CODE 0 515 515 44 2
+text15 CODE 0 61C 61C 1A 2
+text16 CODE 0 5F8 5F8 24 2
+text17 CODE 0 48C 48C 45 2
+text18 CODE 0 636 636 1A 2
+text19 CODE 0 559 559 3E 2
+text20 CODE 0 68B 68B E 2
+maintext CODE 0 1A7 1A7 E5 2
+cstackCOMMON COMMON 1 70 70 A 1
+cstackBANK0 BANK0 1 20 20 34 1
 intentry CODE 0 4 4 8 2
-bssBANK0 BANK0 1 4F 4F 3 1
-strings STRING 0 233 233 81 2
-bssCOMMON COMMON 1 7B 7B 1 1
+bssBANK0 BANK0 1 54 54 8 1
+strings STRING 0 406 406 86 2
+bssCOMMON COMMON 1 7A 7A 2 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -48,22 +51,22 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 52-6F 1
+RAM 5C-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 52-6F 1
+BANK0 5C-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 4D9-1FFF 2
+CONST 6BB-1FFF 2
 ENTRY 3-3 2
-ENTRY 4D9-1FFF 2
+ENTRY 6BB-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 4D9-1FFF 2
+CODE 6BB-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -71,9 +74,9 @@ SFR3 180-18F 1
 COMMON 7C-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 4D9-1FFF 2
+STRCODE 6BB-1FFF 2
 STRING 3-3 2
-STRING 4D9-1FFF 2
+STRING 6BB-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -88,227 +91,293 @@ STRING 4D9-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MPLABX.production.o
-F cinit CODE >679:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-F cinit CODE >682:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-F cinit CODE >705:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-10 cinit CODE >708:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-11 cinit CODE >709:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-12 cinit CODE >710:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-13 cinit CODE >711:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-14 cinit CODE >712:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-15 cinit CODE >718:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-15 cinit CODE >720:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-16 cinit CODE >721:C:\Users\Olifa\AppData\Local\Temp\shqc.s
-4 intentry CODE >99:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4B5 text17 CODE >99:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4B5 text17 CODE >100:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4BB text17 CODE >101:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4BC text17 CODE >122:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-383 text16 CODE >8:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-384 text16 CODE >9:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-388 text16 CODE >10:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-38C text16 CODE >11:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-38C text16 CODE >12:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-38F text16 CODE >14:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-393 text16 CODE >15:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-395 text16 CODE >16:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-395 text16 CODE >17:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-396 text16 CODE >19:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-39A text16 CODE >20:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-39C text16 CODE >21:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-39C text16 CODE >22:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-39D text16 CODE >24:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3A1 text16 CODE >25:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3A3 text16 CODE >26:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3A3 text16 CODE >27:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3A4 text16 CODE >28:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3A8 text16 CODE >29:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3AA text16 CODE >30:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3AA text16 CODE >31:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3AB text16 CODE >32:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3AF text16 CODE >33:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B1 text16 CODE >34:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B1 text16 CODE >35:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B2 text16 CODE >36:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B6 text16 CODE >37:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B8 text16 CODE >38:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B8 text16 CODE >39:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3B9 text16 CODE >40:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3BD text16 CODE >41:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3BF text16 CODE >42:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3BF text16 CODE >43:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-3C0 text16 CODE >44:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-460 text15 CODE >46:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-461 text15 CODE >47:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-464 text15 CODE >48:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-46A text15 CODE >49:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-46D text15 CODE >50:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-476 text15 CODE >51:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-479 text15 CODE >52:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2FA text14 CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2FA text14 CODE >70:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-300 text14 CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-309 text14 CODE >72:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-30F text14 CODE >73:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-318 text14 CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-31E text14 CODE >75:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-326 text14 CODE >76:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-32C text14 CODE >78:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-332 text14 CODE >79:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-338 text14 CODE >80:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-33E text14 CODE >81:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-422 text13 CODE >58:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-423 text13 CODE >60:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-428 text13 CODE >61:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-42D text13 CODE >62:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-433 text13 CODE >63:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-43A text13 CODE >64:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-43F text13 CODE >65:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-445 text13 CODE >67:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-446 text12 CODE >83:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-447 text12 CODE >84:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-44A text12 CODE >85:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-450 text12 CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-453 text12 CODE >87:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-45C text12 CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-45F text12 CODE >90:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2B4 text11 CODE >92:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2B4 text11 CODE >94:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2B9 text11 CODE >95:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-2F9 text11 CODE >96:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
-490 text10 CODE >85:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-490 text10 CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-493 text10 CODE >87:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-494 text10 CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-495 text10 CODE >89:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-496 text10 CODE >90:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-499 text10 CODE >91:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-49A text10 CODE >92:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-49C text10 CODE >93:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-49F text10 CODE >94:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4A1 text10 CODE >95:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-4A2 text10 CODE >97:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-47A text9 CODE >49:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-47B text9 CODE >51:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-47E text9 CODE >52:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-482 text9 CODE >54:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-484 text9 CODE >55:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-485 text9 CODE >56:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-486 text9 CODE >59:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-489 text9 CODE >60:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-48A text9 CODE >61:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-48A text9 CODE >63:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-48F text9 CODE >64:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4CC text8 CODE >66:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4CC text8 CODE >68:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4D2 text8 CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4C3 text7 CODE >84:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4C3 text7 CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4C8 text7 CODE >87:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4CB text7 CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4D3 text6 CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4D4 text6 CODE >73:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-4D8 text6 CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
-33F text5 CODE >5:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-33F text5 CODE >13:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-341 text5 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-347 text5 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-349 text5 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-34A text5 CODE >17:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-351 text5 CODE >18:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-355 text5 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-359 text5 CODE >21:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-360 text5 CODE >22:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-36A text5 CODE >23:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-370 text5 CODE >24:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-371 text5 CODE >26:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-378 text5 CODE >27:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-37E text5 CODE >29:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-382 text5 CODE >30:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-3C1 text4 CODE >5:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3C1 text4 CODE >12:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3C9 text4 CODE >13:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3CB text4 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3CC text4 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3D3 text4 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3D7 text4 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3DB text4 CODE >19:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3E5 text4 CODE >20:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3EB text4 CODE >21:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3F2 text4 CODE >22:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3F8 text4 CODE >24:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3FC text4 CODE >25:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-3FD text3 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-3FD text3 CODE >43:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-3FF text3 CODE >45:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-403 text3 CODE >46:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-409 text3 CODE >47:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-410 text3 CODE >48:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-417 text3 CODE >49:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-41D text3 CODE >52:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-421 text3 CODE >53:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
-4A3 text2 CODE >8:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
-4A4 text2 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
-4B4 text2 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
-19 text1 CODE >505:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-1C text1 CODE >550:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-20 text1 CODE >553:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-21 text1 CODE >555:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-27 text1 CODE >558:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-32 text1 CODE >559:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-33 text1 CODE >563:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-35 text1 CODE >565:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-36 text1 CODE >614:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-46 text1 CODE >615:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-4A text1 CODE >617:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-5F text1 CODE >618:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-76 text1 CODE >619:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-86 text1 CODE >848:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-A5 text1 CODE >1285:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-B1 text1 CODE >1287:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-B5 text1 CODE >1288:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-B9 text1 CODE >1289:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-BE text1 CODE >1331:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-C0 text1 CODE >1332:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-DC text1 CODE >1333:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-E6 text1 CODE >1371:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-F2 text1 CODE >1372:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-F8 text1 CODE >1407:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-103 text1 CODE >1408:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-10F text1 CODE >1410:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-113 text1 CODE >1450:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-119 text1 CODE >1456:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-130 text1 CODE >1464:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-136 text1 CODE >1465:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-141 text1 CODE >1498:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-145 text1 CODE >1500:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-146 text1 CODE >1515:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-176 text1 CODE >1550:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-181 text1 CODE >1500:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-18A text1 CODE >553:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-19C text1 CODE >1564:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-1A0 text1 CODE >1567:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-1A1 maintext CODE >57:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1A1 maintext CODE >58:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1A6 maintext CODE >59:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1AB maintext CODE >61:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1B4 maintext CODE >64:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1B7 maintext CODE >65:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1BD maintext CODE >66:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1C7 maintext CODE >67:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1C8 maintext CODE >68:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1C9 maintext CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1CF maintext CODE >70:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1D9 maintext CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1DA maintext CODE >72:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1DB maintext CODE >73:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1E1 maintext CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1EB maintext CODE >75:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1EC maintext CODE >76:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1F4 maintext CODE >77:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-1FD maintext CODE >78:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-205 maintext CODE >79:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
-226 maintext CODE >80:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+F cinit CODE >713:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+F cinit CODE >716:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+F cinit CODE >757:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+10 cinit CODE >758:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+11 cinit CODE >761:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+12 cinit CODE >762:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+13 cinit CODE >763:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+14 cinit CODE >764:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+15 cinit CODE >765:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+16 cinit CODE >766:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+17 cinit CODE >767:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+18 cinit CODE >768:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+19 cinit CODE >769:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+1A cinit CODE >770:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+1B cinit CODE >776:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+1B cinit CODE >778:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+1C cinit CODE >779:C:\Users\Olifa\AppData\Local\Temp\sbfo.s
+4 intentry CODE >136:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+68B text20 CODE >136:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+68B text20 CODE >137:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+691 text20 CODE >138:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+692 text20 CODE >140:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+559 text19 CODE >8:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+55A text19 CODE >9:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+55E text19 CODE >10:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+562 text19 CODE >11:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+562 text19 CODE >12:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+565 text19 CODE >14:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+569 text19 CODE >15:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+56B text19 CODE >16:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+56B text19 CODE >17:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+56C text19 CODE >19:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+570 text19 CODE >20:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+572 text19 CODE >21:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+572 text19 CODE >22:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+573 text19 CODE >24:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+577 text19 CODE >25:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+579 text19 CODE >26:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+579 text19 CODE >27:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+57A text19 CODE >28:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+57E text19 CODE >29:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+580 text19 CODE >30:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+580 text19 CODE >31:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+581 text19 CODE >32:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+585 text19 CODE >33:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+587 text19 CODE >34:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+587 text19 CODE >35:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+588 text19 CODE >36:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+58C text19 CODE >37:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+58E text19 CODE >38:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+58E text19 CODE >39:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+58F text19 CODE >40:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+593 text19 CODE >41:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+595 text19 CODE >42:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+595 text19 CODE >43:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+596 text19 CODE >44:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+636 text18 CODE >46:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+637 text18 CODE >47:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+63A text18 CODE >48:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+640 text18 CODE >49:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+643 text18 CODE >50:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+64C text18 CODE >51:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+64F text18 CODE >52:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+48C text17 CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+48C text17 CODE >70:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+492 text17 CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+49B text17 CODE >72:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4A1 text17 CODE >73:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4AA text17 CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4B0 text17 CODE >75:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4B8 text17 CODE >76:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4BE text17 CODE >78:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4C4 text17 CODE >79:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4CA text17 CODE >80:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+4D0 text17 CODE >81:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+5F8 text16 CODE >58:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+5F9 text16 CODE >60:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+5FE text16 CODE >61:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+603 text16 CODE >62:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+609 text16 CODE >63:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+610 text16 CODE >64:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+615 text16 CODE >65:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+61B text16 CODE >67:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+61C text15 CODE >83:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+61D text15 CODE >84:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+620 text15 CODE >85:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+626 text15 CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+629 text15 CODE >87:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+632 text15 CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+635 text15 CODE >90:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+515 text14 CODE >92:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+515 text14 CODE >94:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+518 text14 CODE >95:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+558 text14 CODE >96:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/lcdlib.h
+369 text13 CODE >5:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+369 text13 CODE >13:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+36C text13 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+370 text13 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+37B text13 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+37D text13 CODE >17:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+37D text13 CODE >18:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+381 text13 CODE >19:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+38C text13 CODE >20:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+390 text13 CODE >22:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+398 text13 CODE >23:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3A0 text13 CODE >24:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3A2 text13 CODE >25:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3A3 text13 CODE >26:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3AC text13 CODE >27:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3B0 text13 CODE >25:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3B4 text13 CODE >30:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3BD text13 CODE >31:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3CF text13 CODE >32:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3DD text13 CODE >33:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3DE text13 CODE >35:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3E7 text13 CODE >36:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3ED text13 CODE >38:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3F2 text13 CODE >39:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+3FD text13 CODE >40:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+405 text13 CODE >41:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+28C text12 CODE >1:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+28C text12 CODE >3:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+2E7 text12 CODE >4:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+2F0 text12 CODE >5:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+349 text12 CODE >6:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+34C text12 CODE >8:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+356 text12 CODE >9:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+35A text12 CODE >10:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+35B text12 CODE >11:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+35E text12 CODE >12:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+361 text12 CODE >13:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+362 text12 CODE >14:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+365 text12 CODE >15:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+368 text12 CODE >19:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+699 text11 CODE >39:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+69A text11 CODE >40:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+6A0 text11 CODE >41:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+6A4 text11 CODE >42:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/UARTlib.h
+666 text10 CODE >121:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+666 text10 CODE >122:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+669 text10 CODE >123:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+66A text10 CODE >124:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+66B text10 CODE >125:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+66C text10 CODE >126:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+66F text10 CODE >127:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+670 text10 CODE >128:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+672 text10 CODE >129:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+675 text10 CODE >130:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+677 text10 CODE >131:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+678 text10 CODE >134:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+650 text9 CODE >49:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+651 text9 CODE >51:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+654 text9 CODE >52:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+658 text9 CODE >54:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+65A text9 CODE >55:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+65B text9 CODE >56:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+65C text9 CODE >59:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+65F text9 CODE >60:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+660 text9 CODE >61:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+660 text9 CODE >63:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+665 text9 CODE >64:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6AE text8 CODE >66:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6AE text8 CODE >68:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6B4 text8 CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6A5 text7 CODE >84:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6A5 text7 CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6AA text7 CODE >87:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6AD text7 CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6B5 text6 CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6B6 text6 CODE >73:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+6BA text6 CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX/spi.h
+4D1 text5 CODE >5:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4D1 text5 CODE >13:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4D3 text5 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4D9 text5 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4DB text5 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4DC text5 CODE >17:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4E3 text5 CODE >18:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4E7 text5 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4EB text5 CODE >21:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4F2 text5 CODE >22:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+4FC text5 CODE >23:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+502 text5 CODE >24:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+503 text5 CODE >26:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+50A text5 CODE >27:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+510 text5 CODE >29:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+514 text5 CODE >30:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+597 text4 CODE >5:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+597 text4 CODE >12:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+59F text4 CODE >13:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5A1 text4 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5A2 text4 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5A9 text4 CODE >16:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5AD text4 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5B1 text4 CODE >19:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5BB text4 CODE >20:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5C1 text4 CODE >21:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5C8 text4 CODE >22:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5CE text4 CODE >24:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5D2 text4 CODE >25:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
+5D3 text3 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5D3 text3 CODE >43:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5D5 text3 CODE >45:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5D9 text3 CODE >46:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5DF text3 CODE >47:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5E6 text3 CODE >48:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5ED text3 CODE >49:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5F3 text3 CODE >52:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+5F7 text3 CODE >53:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+679 text2 CODE >8:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+67A text2 CODE >14:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+68A text2 CODE >15:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+1F text1 CODE >505:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+22 text1 CODE >550:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+26 text1 CODE >553:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+27 text1 CODE >555:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+2D text1 CODE >558:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+38 text1 CODE >559:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+39 text1 CODE >563:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+3B text1 CODE >565:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+3C text1 CODE >614:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+4C text1 CODE >615:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+50 text1 CODE >617:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+65 text1 CODE >618:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+7C text1 CODE >619:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+8C text1 CODE >848:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+AB text1 CODE >1285:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+B7 text1 CODE >1287:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+BB text1 CODE >1288:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+BF text1 CODE >1289:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+C4 text1 CODE >1331:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+C6 text1 CODE >1332:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+E2 text1 CODE >1333:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+EC text1 CODE >1371:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+F8 text1 CODE >1372:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+FE text1 CODE >1407:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+109 text1 CODE >1408:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+115 text1 CODE >1410:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+119 text1 CODE >1450:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+11F text1 CODE >1456:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+136 text1 CODE >1464:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+13C text1 CODE >1465:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+147 text1 CODE >1498:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+14B text1 CODE >1500:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+14C text1 CODE >1515:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+17C text1 CODE >1550:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+187 text1 CODE >1500:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+190 text1 CODE >553:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+1A2 text1 CODE >1564:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+1A6 text1 CODE >1567:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
+1A7 maintext CODE >65:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1A7 maintext CODE >66:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1AC maintext CODE >67:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1B1 maintext CODE >69:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1BA maintext CODE >70:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1C9 maintext CODE >71:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1D1 maintext CODE >72:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1DA maintext CODE >74:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1DD maintext CODE >75:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1E3 maintext CODE >76:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1ED maintext CODE >77:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1EE maintext CODE >79:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1F4 maintext CODE >80:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1F8 maintext CODE >81:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1F9 maintext CODE >82:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1FA maintext CODE >85:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+1FE maintext CODE >86:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+203 maintext CODE >84:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+20A maintext CODE >89:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+20E maintext CODE >90:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+213 maintext CODE >88:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+219 maintext CODE >92:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+219 maintext CODE >94:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+21A maintext CODE >95:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+220 maintext CODE >96:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+22A maintext CODE >97:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+22B maintext CODE >100:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+231 maintext CODE >103:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+234 maintext CODE >104:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+23A maintext CODE >105:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+244 maintext CODE >106:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+245 maintext CODE >109:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+24B maintext CODE >112:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+253 maintext CODE >113:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+27B maintext CODE >114:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+284 maintext CODE >115:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
+287 maintext CODE >116:D:\UVG\Digital\Mini Proyecto 1\Master\MPLABX\Master.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -322,25 +391,35 @@ F8 text1 CODE >1407:D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\MPLABX.production.o
-___lwmod@counter 24 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-__Hspace_0 4D9 0 ABS 0 - -
+___lwmod@counter 25 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__Hspace_0 6BB 0 ABS 0 - -
 __Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-_Lcd_Init 5F4 0 CODE 0 text14 dist/default/production\MPLABX.production.o
-_Lcd_Port 706 0 CODE 0 text16 dist/default/production\MPLABX.production.o
+_Lcd_Init 918 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+_Lcd_Port AB2 0 CODE 0 text19 dist/default/production\MPLABX.production.o
 spiInit@sTransmitEdge 74 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_Lcd_Init 67E 0 CODE 0 text14 dist/default/production\MPLABX.production.o
-__end_of_Lcd_Port 782 0 CODE 0 text16 dist/default/production\MPLABX.production.o
-main@s 3F 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+_V1 57 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+_V2 56 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+__end_of_Lcd_Init 9A2 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+__end_of_Lcd_Port B2E 0 CODE 0 text19 dist/default/production\MPLABX.production.o
+main@s 44 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Olifa\AppData\Local\Temp\shqc.o
-_main 342 0 CODE 0 maintext dist/default/production\MPLABX.production.o
+_BRGH 4C2 0 ABS 0 - dist/default/production\MPLABX.production.o
+_CREN C4 0 ABS 0 - dist/default/production\MPLABX.production.o
+_RCIF 65 0 ABS 0 - dist/default/production\MPLABX.production.o
+_SPEN C7 0 ABS 0 - dist/default/production\MPLABX.production.o
+_SYNC 4C4 0 ABS 0 - dist/default/production\MPLABX.production.o
+_TRMT 4C1 0 ABS 0 - dist/default/production\MPLABX.production.o
+_TXEN 4C5 0 ABS 0 - dist/default/production\MPLABX.production.o
+___sp 0 0 STACK 2 stack C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+_main 34E 0 CODE 0 maintext dist/default/production\MPLABX.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MPLABX.production.o
-_Lcd_Write_Char 88C 0 CODE 0 text12 dist/default/production\MPLABX.production.o
-start 18 0 CODE 0 init C:\Users\Olifa\AppData\Local\Temp\shqc.o
+_Lcd_Write_Char C38 0 CODE 0 text15 dist/default/production\MPLABX.production.o
+start 18 0 CODE 0 init C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+__size_of___aldiv 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\MPLABX.production.o
@@ -348,71 +427,81 @@ Lcd_Port@a 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 ?___wmul 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\shqc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Olifa\AppData\Local\Temp\sbfo.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
+___aldiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
+_UART_Write D32 0 CODE 0 text11 dist/default/production\MPLABX.production.o
+___aldiv@sign 22 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_Lcd_Write_Char 8C0 0 CODE 0 text12 dist/default/production\MPLABX.production.o
+__end_of_Lcd_Write_Char C6C 0 CODE 0 text15 dist/default/production\MPLABX.production.o
 ___wmul@multiplicand 74 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MPLABX.production.o
-__end_of___wmul 844 0 CODE 0 text3 dist/default/production\MPLABX.production.o
+UART_Init@baudrate 27 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__end_of___wmul BF0 0 CODE 0 text3 dist/default/production\MPLABX.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of_spiRead 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_sprintf 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 ___lwmod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-__end_of___lwdiv 706 0 CODE 0 text5 dist/default/production\MPLABX.production.o
-__end_of___lwmod 7FA 0 CODE 0 text4 dist/default/production\MPLABX.production.o
+__end_of___aldiv 80C 0 CODE 0 text13 dist/default/production\MPLABX.production.o
+__end_of___lwdiv A2A 0 CODE 0 text5 dist/default/production\MPLABX.production.o
+__end_of___lwmod BA6 0 CODE 0 text4 dist/default/production\MPLABX.production.o
 __size_of_isdigit 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 _INTCON B 0 ABS 0 - dist/default/production\MPLABX.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Olifa\AppData\Local\Temp\shqc.o
-___stacklo 0 0 ABS 0 - C:\Users\Olifa\AppData\Local\Temp\shqc.o
-_dpowers 486 0 STRING 0 strings dist/default/production\MPLABX.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+___stacklo 0 0 ABS 0 - C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+_dpowers 82C 0 STRING 0 strings dist/default/production\MPLABX.production.o
+__end_of_UART_Write D4A 0 CODE 0 text11 dist/default/production\MPLABX.production.o
 ___lwdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 Lcd_Set_Cursor@temp 79 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 ___lwmod@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 spiInit@sDataSample 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\MPLABX.production.o
-_Lcd_Write_String 568 0 CODE 0 text11 dist/default/production\MPLABX.production.o
-_SLAVE1 51 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
-_SLAVE2 50 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
-_SLAVE3 4F 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+UART_Init@x 37 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+___aldiv@quotient 23 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+_Lcd_Write_String A2A 0 CODE 0 text14 dist/default/production\MPLABX.production.o
+_SLAVE1 5B 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+_SLAVE2 5A 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+_SLAVE3 59 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\MPLABX.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\MPLABX.production.o
+_TRISC6 43E 0 ABS 0 - dist/default/production\MPLABX.production.o
+_TRISC7 43F 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\MPLABX.production.o
-_isdigit$748 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Olifa\AppData\Local\Temp\shqc.o
+_isdigit$787 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Olifa\AppData\Local\Temp\sbfo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 32 0 CODE 0 cinit -
+__Hcinit 3E 0 CODE 0 cinit -
 __size_of_spiReceiveWait 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Hstack 0 0 STACK 2 stack -
-__stringbase 484 0 STRING 0 strings dist/default/production\MPLABX.production.o
+__stringbase 82A 0 STRING 0 strings dist/default/production\MPLABX.production.o
 ___lwdiv@counter 79 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_spiInit 920 0 CODE 0 text9 dist/default/production\MPLABX.production.o
-__end_of_spiRead 998 0 CODE 0 text7 dist/default/production\MPLABX.production.o
-__end_of_sprintf 342 0 CODE 0 text1 dist/default/production\MPLABX.production.o
+__end_of_spiInit CCC 0 CODE 0 text9 dist/default/production\MPLABX.production.o
+__end_of_spiRead D5C 0 CODE 0 text7 dist/default/production\MPLABX.production.o
+__end_of_sprintf 34E 0 CODE 0 text1 dist/default/production\MPLABX.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__end_of_isdigit 96A 0 CODE 0 text2 dist/default/production\MPLABX.production.o
+__end_of_isdigit D16 0 CODE 0 text2 dist/default/production\MPLABX.production.o
 __Lcinit 1E 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
 _PORTBbits 6 0 ABS 0 - dist/default/production\MPLABX.production.o
@@ -432,10 +521,10 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___wmul 7FA 0 CODE 0 text3 dist/default/production\MPLABX.production.o
+___wmul BA6 0 CODE 0 text3 dist/default/production\MPLABX.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_ISR 96A 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+_ISR D16 0 CODE 0 text20 dist/default/production\MPLABX.production.o
 _RD0 40 0 ABS 0 - dist/default/production\MPLABX.production.o
 _RD1 41 0 ABS 0 - dist/default/production\MPLABX.production.o
 _RD2 42 0 ABS 0 - dist/default/production\MPLABX.production.o
@@ -446,128 +535,143 @@ _RD6 46 0 ABS 0 - dist/default/production\MPLABX.production.o
 _RD7 47 0 ABS 0 - dist/default/production\MPLABX.production.o
 _RE1 49 0 ABS 0 - dist/default/production\MPLABX.production.o
 _RE2 4A 0 ABS 0 - dist/default/production\MPLABX.production.o
-__S0 4D9 0 ABS 0 - -
+__S0 6BB 0 ABS 0 - -
 __S1 7C 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\MPLABX.production.o
-sprintf@val 32 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-__end_of_Lcd_Write_String 5F4 0 CODE 0 text11 dist/default/production\MPLABX.production.o
-__end_of_ISR 986 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+sprintf@val 35 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__end_of_Lcd_Write_String AB2 0 CODE 0 text14 dist/default/production\MPLABX.production.o
+__end_of_ISR D32 0 CODE 0 text20 dist/default/production\MPLABX.production.o
 __Lintentry 8 0 CODE 0 intentry -
 __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\MPLABX.production.o
-__stringtab 466 0 STRING 0 strings dist/default/production\MPLABX.production.o
+__stringtab 80C 0 STRING 0 strings dist/default/production\MPLABX.production.o
 Lcd_Write_String@a 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-Lcd_Write_String@i 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Olifa\AppData\Local\Temp\shqc.o
-__end_of_Lcd_Cmd 8F4 0 CODE 0 text15 dist/default/production\MPLABX.production.o
+Lcd_Write_String@i 78 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Olifa\AppData\Local\Temp\sbfo.o
+__end_of_Lcd_Cmd CA0 0 CODE 0 text18 dist/default/production\MPLABX.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-sprintf@flag 31 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-sprintf@prec 30 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-__ptext10 920 0 CODE 0 text10 dist/default/production\MPLABX.production.o
-__ptext11 568 0 CODE 0 text11 dist/default/production\MPLABX.production.o
-__ptext12 88C 0 CODE 0 text12 dist/default/production\MPLABX.production.o
-__ptext13 844 0 CODE 0 text13 dist/default/production\MPLABX.production.o
-__ptext14 5F4 0 CODE 0 text14 dist/default/production\MPLABX.production.o
-__ptext15 8C0 0 CODE 0 text15 dist/default/production\MPLABX.production.o
-__ptext16 706 0 CODE 0 text16 dist/default/production\MPLABX.production.o
-__ptext17 96A 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+__size_of_UART_Write 0 0 ABS 0 - dist/default/production\MPLABX.production.o
+sprintf@flag 34 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+sprintf@prec 33 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__ptext10 CCC 0 CODE 0 text10 dist/default/production\MPLABX.production.o
+__ptext11 D32 0 CODE 0 text11 dist/default/production\MPLABX.production.o
+__ptext12 518 0 CODE 0 text12 dist/default/production\MPLABX.production.o
+__ptext13 6D2 0 CODE 0 text13 dist/default/production\MPLABX.production.o
+__ptext14 A2A 0 CODE 0 text14 dist/default/production\MPLABX.production.o
+__ptext15 C38 0 CODE 0 text15 dist/default/production\MPLABX.production.o
+__ptext16 BF0 0 CODE 0 text16 dist/default/production\MPLABX.production.o
+__ptext17 918 0 CODE 0 text17 dist/default/production\MPLABX.production.o
+__ptext18 C6C 0 CODE 0 text18 dist/default/production\MPLABX.production.o
+__ptext19 AB2 0 CODE 0 text19 dist/default/production\MPLABX.production.o
+__ptext20 D16 0 CODE 0 text20 dist/default/production\MPLABX.production.o
 __size_of_Lcd_Write_Char 0 0 ABS 0 - dist/default/production\MPLABX.production.o
-_Lcd_Set_Cursor 844 0 CODE 0 text13 dist/default/production\MPLABX.production.o
-___lwdiv 67E 0 CODE 0 text5 dist/default/production\MPLABX.production.o
-___lwmod 782 0 CODE 0 text4 dist/default/production\MPLABX.production.o
-__pmaintext 342 0 CODE 0 maintext dist/default/production\MPLABX.production.o
+___aldiv 6D2 0 CODE 0 text13 dist/default/production\MPLABX.production.o
+_Lcd_Set_Cursor BF0 0 CODE 0 text16 dist/default/production\MPLABX.production.o
+___lwdiv 9A2 0 CODE 0 text5 dist/default/production\MPLABX.production.o
+___lwmod B2E 0 CODE 0 text4 dist/default/production\MPLABX.production.o
+__pmaintext 34E 0 CODE 0 maintext dist/default/production\MPLABX.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 ___wmul@multiplier 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 ___lwdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-__end_of__stringtab 486 0 STRING 0 strings dist/default/production\MPLABX.production.o
+__end_of__stringtab 82C 0 STRING 0 strings dist/default/production\MPLABX.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 7B 0 COMMON 1 bssCOMMON dist/default/production\MPLABX.production.o
+__pbssCOMMON 7A 0 COMMON 1 bssCOMMON dist/default/production\MPLABX.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 2A 0 CODE 0 cinit dist/default/production\MPLABX.production.o
-__end_of_Lcd_Set_Cursor 88C 0 CODE 0 text13 dist/default/production\MPLABX.production.o
+end_of_initialization 36 0 CODE 0 cinit dist/default/production\MPLABX.production.o
+__end_of_Lcd_Set_Cursor C38 0 CODE 0 text16 dist/default/production\MPLABX.production.o
 __Hintentry 18 0 CODE 0 intentry -
 Lcd_Set_Cursor@a 78 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 Lcd_Set_Cursor@b 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Lstrings 0 0 ABS 0 strings -
+?___aldiv 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 ___lwdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 ?___lwdiv 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 ?___lwmod 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 32 0 CODE 0 text1 dist/default/production\MPLABX.production.o
-__ptext2 946 0 CODE 0 text2 dist/default/production\MPLABX.production.o
-__ptext3 7FA 0 CODE 0 text3 dist/default/production\MPLABX.production.o
-__ptext4 782 0 CODE 0 text4 dist/default/production\MPLABX.production.o
-__ptext5 67E 0 CODE 0 text5 dist/default/production\MPLABX.production.o
-__ptext6 9A6 0 CODE 0 text6 dist/default/production\MPLABX.production.o
-__ptext7 986 0 CODE 0 text7 dist/default/production\MPLABX.production.o
-__ptext8 998 0 CODE 0 text8 dist/default/production\MPLABX.production.o
-__ptext9 8F4 0 CODE 0 text9 dist/default/production\MPLABX.production.o
-_spiInit 8F4 0 CODE 0 text9 dist/default/production\MPLABX.production.o
-_spiRead 986 0 CODE 0 text7 dist/default/production\MPLABX.production.o
-_sprintf 32 0 CODE 0 text1 dist/default/production\MPLABX.production.o
+__end_of_UART_Init 6D2 0 CODE 0 text12 dist/default/production\MPLABX.production.o
+__size_of_UART_Init 0 0 ABS 0 - dist/default/production\MPLABX.production.o
+__ptext1 3E 0 CODE 0 text1 dist/default/production\MPLABX.production.o
+__ptext2 CF2 0 CODE 0 text2 dist/default/production\MPLABX.production.o
+__ptext3 BA6 0 CODE 0 text3 dist/default/production\MPLABX.production.o
+__ptext4 B2E 0 CODE 0 text4 dist/default/production\MPLABX.production.o
+__ptext5 9A2 0 CODE 0 text5 dist/default/production\MPLABX.production.o
+__ptext6 D6A 0 CODE 0 text6 dist/default/production\MPLABX.production.o
+__ptext7 D4A 0 CODE 0 text7 dist/default/production\MPLABX.production.o
+__ptext8 D5C 0 CODE 0 text8 dist/default/production\MPLABX.production.o
+__ptext9 CA0 0 CODE 0 text9 dist/default/production\MPLABX.production.o
+_spiInit CA0 0 CODE 0 text9 dist/default/production\MPLABX.production.o
+_spiRead D4A 0 CODE 0 text7 dist/default/production\MPLABX.production.o
+___aldiv@dividend 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
+_sprintf 3E 0 CODE 0 text1 dist/default/production\MPLABX.production.o
 spiWrite@dat 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Lpowerup 0 0 CODE 0 powerup -
+UART_Write@data 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 spiInit@sType 75 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-sprintf@ap 2F 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-sprintf@sp 34 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-_isdigit 946 0 CODE 0 text2 dist/default/production\MPLABX.production.o
+sprintf@ap 32 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+sprintf@sp 37 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+_isdigit CF2 0 CODE 0 text2 dist/default/production\MPLABX.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization 2A 0 CODE 0 cinit dist/default/production\MPLABX.production.o
+_UART_Init 518 0 CODE 0 text12 dist/default/production\MPLABX.production.o
+__end_of__initialization 36 0 CODE 0 cinit dist/default/production\MPLABX.production.o
 __size_of_spiWrite 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 Lcd_Cmd@a 75 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-_spiReceiveWait 998 0 CODE 0 text8 dist/default/production\MPLABX.production.o
+_spiReceiveWait D5C 0 CODE 0 text8 dist/default/production\MPLABX.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of_Lcd_Init 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __size_of_Lcd_Port 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-sprintf@c 37 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-sprintf@f 25 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-__end_of_main 466 0 CODE 0 maintext dist/default/production\MPLABX.production.o
+___aldiv@counter 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+sprintf@c 3A 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+sprintf@f 26 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__end_of_main 518 0 CODE 0 maintext dist/default/production\MPLABX.production.o
 isdigit@c 73 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MPLABX.production.o
-__end_of_dpowers 49A 0 STRING 0 strings dist/default/production\MPLABX.production.o
-?_sprintf 25 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+__end_of_dpowers 840 0 STRING 0 strings dist/default/production\MPLABX.production.o
+?_sprintf 26 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\MPLABX.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\MPLABX.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\MPLABX.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production\MPLABX.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\MPLABX.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\MPLABX.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\MPLABX.production.o
-__end_of_setup 946 0 CODE 0 text10 dist/default/production\MPLABX.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\MPLABX.production.o
+__end_of_setup CF2 0 CODE 0 text10 dist/default/production\MPLABX.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\MPLABX.production.o
-_setup 920 0 CODE 0 text10 dist/default/production\MPLABX.production.o
+_setup CCC 0 CODE 0 text10 dist/default/production\MPLABX.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\MPLABX.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MPLABX.production.o
-sprintf@width 35 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
-_Lcd_Cmd 8C0 0 CODE 0 text15 dist/default/production\MPLABX.production.o
+sprintf@width 38 0 BANK0 1 cstackBANK0 dist/default/production\MPLABX.production.o
+_Lcd_Cmd C6C 0 CODE 0 text18 dist/default/production\MPLABX.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\MPLABX.production.o
 spiInit@sClockIdle 73 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\MPLABX.production.o
-__pbssBANK0 4F 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
-_spiWrite 9A6 0 CODE 0 text6 dist/default/production\MPLABX.production.o
-__pstrings 466 0 STRING 0 strings dist/default/production\MPLABX.production.o
+__pbssBANK0 54 0 BANK0 1 bssBANK0 dist/default/production\MPLABX.production.o
+_spiWrite D6A 0 CODE 0 text6 dist/default/production\MPLABX.production.o
+__pstrings 80C 0 STRING 0 strings dist/default/production\MPLABX.production.o
 ___wmul@product 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-__end_of_spiReceiveWait 9A6 0 CODE 0 text8 dist/default/production\MPLABX.production.o
+__end_of_spiReceiveWait D6A 0 CODE 0 text8 dist/default/production\MPLABX.production.o
 Lcd_Write_Char@a 75 0 COMMON 1 cstackCOMMON dist/default/production\MPLABX.production.o
-__end_of_spiWrite 9B2 0 CODE 0 text6 dist/default/production\MPLABX.production.o
+__end_of_spiWrite D76 0 CODE 0 text6 dist/default/production\MPLABX.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -593,12 +697,12 @@ __end_of_spiWrite 9B2 0 CODE 0 text6 dist/default/production\MPLABX.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text11 0 2B4 568 225 2
+text17 0 48C 918 22F 2
 cstackCOMMON 1 70 70 C 1
-cstackBANK0 1 20 20 32 1
-intentry 0 4 8 22F 2
+cstackBANK0 1 20 20 3C 1
+intentry 0 4 8 402 2
 reset_vec 0 0 0 3 2
-strings 0 233 466 81 2
+strings 0 406 80C 86 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
