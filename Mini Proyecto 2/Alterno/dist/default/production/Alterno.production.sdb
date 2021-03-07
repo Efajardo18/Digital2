@@ -1,0 +1,148 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"3 D:\UVG\Digital\Mini Proyecto 2\Alterno/I2Clib.h
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"13
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+"18
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"30
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"36
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+"42
+[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+"30 D:\UVG\Digital\Mini Proyecto 2\Alterno/UARTlib.h
+[v _UART_Read UART_Read `(uc  1 e 1 0 ]
+"41
+[v _UART_Write UART_Write `(v  1 e 1 0 ]
+"5 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"10 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"28 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+[v _main main `(v  1 e 1 0 ]
+"228 D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1979
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"2048
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"2177
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3563
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"3566
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"3695
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"3836
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"4043
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"4166
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"4175
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"4226
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"4250
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"4259
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"4313
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"4457
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"4460
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"4466
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"4469
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"4508
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"4538
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"4664
+[v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
+"28 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+[v _main main `(v  1 e 1 0 ]
+{
+"48
+} 0
+"36 D:\UVG\Digital\Mini Proyecto 2\Alterno/I2Clib.h
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+{
+[v I2C_Master_Write@d d `ui  1 p 2 0 ]
+"40
+} 0
+"30
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"34
+} 0
+"18
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"22
+} 0
+"42
+[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+{
+"44
+[v I2C_Master_Read@temp temp `us  1 a 2 4 ]
+"42
+[v I2C_Master_Read@a a `us  1 p 2 0 ]
+"53
+} 0
+"13
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"16
+} 0
+"3
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+[v I2C_Master_Init@c c `DCul  1 p 4 0 ]
+"11
+} 0
+"5 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
