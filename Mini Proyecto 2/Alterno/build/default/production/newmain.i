@@ -2518,9 +2518,9 @@ extern __bank0 __bit __timeout;
 
 char UART_Init(const long int baudrate){
  unsigned int x;
- x = (8000000 - baudrate*64)/(baudrate*64);
+ x = (4000000 - baudrate*64)/(baudrate*64);
  if(x>255){
-  x = (8000000 - baudrate*16)/(baudrate*16);
+  x = (4000000 - baudrate*16)/(baudrate*16);
   BRGH = 1;
  }
  if(x<256){
@@ -2573,8 +2573,8 @@ void I2C_Master_Init(const unsigned long c)
 {
     SSPCON = 0b00101000;
     SSPCON2 = 0;
-    SSPADD = (8000000/(4*c))-1;
-    SSPSTAT = 0;
+    SSPADD = (4000000/(4*c))-1;
+    SSPSTAT = 0x80;
     TRISC3 = 1;
     TRISC4 = 1;
 }
@@ -2616,31 +2616,39 @@ unsigned short I2C_Master_Read(unsigned short a)
     I2C_Master_Wait();
     temp = SSPBUF;
     I2C_Master_Wait();
-    ACKDT = (a)?0:1;
+    ACKDT = (a)?1:0;
     ACKEN = 1;
     return temp;
 }
 # 26 "newmain.c" 2
 
 
+void setup(void);
+
 void main(void) {
     nRBPU = 0;
+    TRISC = 0B00011000;
     TRISB = 0xFF;
     TRISD = 0x00;
-    PORTD = 0x00;
+    PORTD = 0xFF;
     I2C_Master_Init(100000);
     while(1)
     {
-        I2C_Master_Start();
-        I2C_Master_Write(0x28);
-        I2C_Master_Write(PORTB);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
+
+
+
+
+
+          I2C_Master_Start();
+        I2C_Master_Write(0x29);
         PORTD = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(4000000/4000.0)));
     }
     return;
+}
+
+void setup(void) {
+    ANSEL = 0b00000000;
+    ANSELH = 0b00000000;
 }

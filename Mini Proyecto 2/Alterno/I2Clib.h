@@ -5,7 +5,7 @@ void I2C_Master_Init(const unsigned long c)
     SSPCON = 0b00101000;
     SSPCON2 = 0;
     SSPADD = (_XTAL_FREQ/(4*c))-1;
-    SSPSTAT = 0;
+    SSPSTAT = 0x80;
     TRISC3 = 1;
     TRISC4 = 1;
 }
@@ -47,7 +47,7 @@ unsigned short I2C_Master_Read(unsigned short a)
     I2C_Master_Wait();
     temp = SSPBUF;
     I2C_Master_Wait();
-    ACKDT = (a)?0:1;
+    ACKDT = (a)?1:0;
     ACKEN = 1;
     return temp;
 }

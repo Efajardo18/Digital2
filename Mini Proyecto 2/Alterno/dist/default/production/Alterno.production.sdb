@@ -31,11 +31,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"28 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+"30 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
 [v _main main `(v  1 e 1 0 ]
-"228 D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _PORTB PORTB `VEuc  1 e 1 @6 ]
-"352
+"352 D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
@@ -47,6 +45,8 @@
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1979
@@ -57,6 +57,10 @@
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3563
 [v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
 "3566
@@ -93,10 +97,10 @@
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "4664
 [v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
-"28 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+"30 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
 [v _main main `(v  1 e 1 0 ]
 {
-"48
+"51
 } 0
 "36 D:\UVG\Digital\Mini Proyecto 2\Alterno/I2Clib.h
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]

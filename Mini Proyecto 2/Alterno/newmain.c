@@ -19,7 +19,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 
 #include <xc.h>
 #include "UARTlib.h"
@@ -29,19 +29,20 @@ void setup(void);
 
 void main(void) {
     nRBPU = 0;
+    TRISC = 0B00011000;
     TRISB = 0xFF;
     TRISD = 0x00;
-    PORTD = 0x00;
+    PORTD = 0xFF;
     I2C_Master_Init(100000);
     while(1)
     {
-        I2C_Master_Start();
+        /*I2C_Master_Start();
         I2C_Master_Write(0x28);
-        I2C_Master_Write(PORTB);
+        I2C_Master_Write(255);
         I2C_Master_Stop();
         __delay_ms(200);
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
+        */I2C_Master_Start();
+        I2C_Master_Write(0x29);
         PORTD = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
