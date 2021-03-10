@@ -22,35 +22,68 @@
 #define _XTAL_FREQ 4000000
 
 #include <xc.h>
-#include "UARTlib.h"
+#include <stdint.h>
+#include <stdio.h>
 #include "I2Clib.h"
+
+uint8_t I2DATO;
+uint8_t ledsu;
 
 void setup(void);
 
 void main(void) {
-    nRBPU = 0;
-    TRISC = 0B00011000;
-    TRISB = 0xFF;
-    TRISD = 0x00;
-    PORTD = 0xFF;
-    I2C_Master_Init(100000);
+    setup();
+    //I2C_Master_Init(100000);    //INICIAMOS LA COMUNICACIÓN I2C
     while(1)
     {
-        /*I2C_Master_Start();
-        I2C_Master_Write(0x28);
-        I2C_Master_Write(255);
-        I2C_Master_Stop();
-        __delay_ms(200);
-        */I2C_Master_Start();
-        I2C_Master_Write(0x29);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(200);
+        //I2C_Master_Start();
+        //I2C_Master_Write(0x29);
+        //I2DATO = I2C_Master_Read(0);
+        //I2C_Master_Stop();
+        //__delay_ms(200);
+        switch(ledsu){
+            case 0:
+                PORTB=0;
+                break;
+            case 1:
+                PORTB=1;
+                break;
+            case 2:
+                PORTB=2;
+                break;
+            case 3:
+                PORTB=3;
+                break;
+        }
+        TXREG = I2DATO;
+        __delay_ms(5);
     }
     return;
 }
 
 void setup(void) {
+    TRISA   = 0b00000000;
+    TRISB   = 0b00000000;
+    TRISC   = 0b11011000;
+    TRISD   = 0b00000000;
+    TRISE   = 0b00000000;
     ANSEL   = 0b00000000;
     ANSELH  = 0b00000000;
+    PORTA   = 0b00000000;
+    PORTB   = 0b00000000;
+    PORTD   = 0b00000000;
+    I2DATO  = 0;
+    ledsu   = 0;
+    INTCON  = 0b11000000;
+    PIE1    = 0b00100000;
+    TXSTA   = 0b00100100;
+    RCSTA   = 0b10010000;
+    SPBRG   = 0b00011001;
+}
+
+void __interrupt() ISR(void) {
+    if (PIR1bits.RCIF == 1) {
+        ledsu=RCREG;
+        PIR1bits.RCIF = 0;    
+    }
 }

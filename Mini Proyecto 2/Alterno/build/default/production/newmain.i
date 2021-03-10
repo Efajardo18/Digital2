@@ -2513,58 +2513,239 @@ extern __bank0 __bit __timeout;
 # 28 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 24 "newmain.c" 2
 
-# 1 "./UARTlib.h" 1
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
 
 
-char UART_Init(const long int baudrate){
- unsigned int x;
- x = (4000000 - baudrate*64)/(baudrate*64);
- if(x>255){
-  x = (4000000 - baudrate*16)/(baudrate*16);
-  BRGH = 1;
- }
- if(x<256){
-   SPBRG = x;
-   SYNC = 0;
-   SPEN = 1;
-      TRISC7 = 1;
-      TRISC6 = 1;
-      CREN = 1;
-      TXEN = 1;
-   return 1;
- }
- return 0;
-}
 
-char UART_TX_Empty(){
-  return TRMT;
-}
 
-char UART_Data_Ready(){
-   return RCIF;
-}
-char UART_Read(){
-  while(!RCIF);
-  return RCREG;
-}
 
-void UART_Read_Text(char *Output, unsigned int length){
- int i;
- for(int i=0;i<length;i++)
-  Output[i] = UART_Read();
-}
 
-void UART_Write(char data){
-  while(!TRMT);
-  TXREG = data;
-}
+typedef signed int int16_t;
 
-void UART_Write_Text(char *text){
-  int i;
-  for(i=0;text[i]!='\0';i++)
-   UART_Write(text[i]);
-}
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 # 25 "newmain.c" 2
+
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
+# 5 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 1 3
+# 29 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 26 "newmain.c" 2
 
 # 1 "./I2Clib.h" 1
 
@@ -2620,18 +2801,17 @@ unsigned short I2C_Master_Read(unsigned short a)
     ACKEN = 1;
     return temp;
 }
-# 26 "newmain.c" 2
+# 27 "newmain.c" 2
 
+
+uint8_t I2DATO;
+uint8_t ledsu;
 
 void setup(void);
 
 void main(void) {
-    nRBPU = 0;
-    TRISC = 0B00011000;
-    TRISB = 0xFF;
-    TRISD = 0x00;
-    PORTD = 0xFF;
-    I2C_Master_Init(100000);
+    setup();
+
     while(1)
     {
 
@@ -2639,16 +2819,49 @@ void main(void) {
 
 
 
-          I2C_Master_Start();
-        I2C_Master_Write(0x29);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(4000000/4000.0)));
+        switch(ledsu){
+            case 0:
+                PORTB=0;
+                break;
+            case 1:
+                PORTB=1;
+                break;
+            case 2:
+                PORTB=2;
+                break;
+            case 3:
+                PORTB=3;
+                break;
+        }
+        TXREG = I2DATO;
+        _delay((unsigned long)((5)*(4000000/4000.0)));
     }
     return;
 }
 
 void setup(void) {
+    TRISA = 0b00000000;
+    TRISB = 0b00000000;
+    TRISC = 0b11011000;
+    TRISD = 0b00000000;
+    TRISE = 0b00000000;
     ANSEL = 0b00000000;
     ANSELH = 0b00000000;
+    PORTA = 0b00000000;
+    PORTB = 0b00000000;
+    PORTD = 0b00000000;
+    I2DATO = 0;
+    ledsu = 0;
+    INTCON = 0b11000000;
+    PIE1 = 0b00100000;
+    TXSTA = 0b00100100;
+    RCSTA = 0b10010000;
+    SPBRG = 0b00011001;
+}
+
+void __attribute__((picinterrupt(("")))) ISR(void) {
+    if (PIR1bits.RCIF == 1) {
+        ledsu=RCREG;
+        PIR1bits.RCIF = 0;
+    }
 }
