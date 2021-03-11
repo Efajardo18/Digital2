@@ -21,20 +21,25 @@ int ledR  = 0;
 int ledB  = 0;
 int wea   = 0;
 String qq = "";
+float x;
+float y;
+float z;
 
-#define IO_LOOP_DELAY 5000
+#define IO_LOOP_DELAY 8000
 unsigned long lastUpdate = 0;
 
-AdafruitIO_Feed *counter = io.feed("counter");
+AdafruitIO_Feed *feedx = io.feed("x");
+AdafruitIO_Feed *feedy = io.feed("y");
+AdafruitIO_Feed *feedz = io.feed("z");
 AdafruitIO_Feed *LedR = io.feed("LedR");
 AdafruitIO_Feed *LedB = io.feed("LedB");
 
 void setup() {
+  Serial.begin(9600);
   Serial2.begin(9600);
   //while(! Serial);
   //Serial.print("Connecting to Adafruit IO");
   io.connect();
-  counter->onMessage(handleMessage);
   LedR->onMessage(handleLed1);
   LedB->onMessage(handleLed2);
   while(io.status() < AIO_CONNECTED) {
@@ -43,39 +48,40 @@ void setup() {
   }
   //Serial.println();
   //Serial.println(io.statusText());
-  counter->get();
   LedR->get();
   LedB->get();
+  feedx->get();
+  feedy->get();
+  feedz->get();
 }
 
 void loop() {
 
   io.run();
+  Serial2.write(wea);
   while(Serial2.available()){
     char ww = Serial2.read();
-    if(char != '\n'){
+    if(ww!= '\n'){
       qq.concat(ww);
     }
     else{
+      x=(qq.substring(0,7)).toFloat();
+      y=(qq.substring(7,14)).toFloat();
+      z=(qq.substring(14,21)).toFloat();
       Serial.println(qq);
+      qq="";
       break;
     }
-    Serial2.write(wea);
     }
 
   if (millis() > (lastUpdate + IO_LOOP_DELAY)) {
    // Serial.print("sending -> ");
     //Serial.println(count);
-    counter->save(qq);
+    feedx->save(x);
+    feedy->save(y);
+    feedz->save(z);
     lastUpdate = millis();
   }
-
-}
-
-void handleMessage(AdafruitIO_Data *data) {
-
-  //Serial.print("received <- ");
-  //Serial.println(data->value());
 
 }
 

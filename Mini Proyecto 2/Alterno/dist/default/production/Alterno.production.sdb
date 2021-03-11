@@ -55,16 +55,28 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "39 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
 [v _main main `(v  1 e 1 0 ]
-"78
+"79
 [v _setup setup `(v  1 e 1 0 ]
-"97
+"98
 [v _ISR ISR `II(v  1 e 1 0 ]
-"104
+"105
 [v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
-"114
+"115
 [v _UARTSendString UARTSendString `(v  1 e 1 0 ]
 "166 D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S65 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183
+[u S74 . 1 `S65 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES74  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "352
@@ -112,7 +124,7 @@
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 "2556
 [v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
-[s S98 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S119 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -122,15 +134,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S107 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S128 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S111 . 1 `uc 1 . 1 0 :6:0 
+[s S132 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S114 . 1 `S98 1 . 1 0 `S107 1 . 1 0 `S111 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES114  1 e 1 @152 ]
+[u S135 . 1 `S119 1 . 1 0 `S128 1 . 1 0 `S132 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES135  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -164,16 +176,16 @@
 "39
 [v _main main `(v  1 e 1 0 ]
 {
-"62
+"63
 [v main@status status `i  1 a 2 61 ]
-"61
+"62
 [v main@regs regs `*.4uc  1 a 1 63 ]
-"76
+"77
 } 0
-"78
+"79
 [v _setup setup `(v  1 e 1 0 ]
 {
-"95
+"96
 } 0
 "6 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftoa.c
 [v _ftoa ftoa `(*.4uc  1 e 1 0 ]
@@ -288,38 +300,38 @@
 [v ___flge@ff2 ff2 `d  1 p 4 7 ]
 "19
 } 0
-"114 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+"115 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
 [v _UARTSendString UARTSendString `(v  1 e 1 0 ]
 {
 [v UARTSendString@str str `*.4DCuc  1 a 1 wreg ]
-"115
+"116
 [v UARTSendString@i i `i  1 a 2 7 ]
-"114
+"115
 [v UARTSendString@str str `*.4DCuc  1 a 1 wreg ]
 [v UARTSendString@max_length max_length `DCuc  1 p 1 4 ]
 [v UARTSendString@str str `*.4DCuc  1 a 1 6 ]
-"119
+"120
 } 0
-"104
+"105
 [v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
 {
 [v UARTSendChar@c c `DCuc  1 a 1 wreg ]
 [v UARTSendChar@c c `DCuc  1 a 1 wreg ]
 [v UARTSendChar@c c `DCuc  1 a 1 3 ]
-"107
+"108
 } 0
 "73 D:\UVG\Digital\Mini Proyecto 2\Alterno/I2Clib.h
 [v _I2C_WWW I2C_WWW `(v  1 e 1 0 ]
 {
 [v I2C_WWW@dato dato `*.4f  1 a 1 wreg ]
 "84
-[v I2C_WWW@i_166 i `i  1 a 2 51 ]
+[v I2C_WWW@i_187 i `i  1 a 2 51 ]
 "80
 [v I2C_WWW@i i `i  1 a 2 48 ]
 "74
-[v I2C_WWW@d d `[6]uc  1 a 6 42 ]
+[v I2C_WWW@d d `[6]uc  1 a 6 36 ]
 "83
-[v I2C_WWW@e e `[3]i  1 a 6 36 ]
+[v I2C_WWW@e e `[3]i  1 a 6 42 ]
 "73
 [v I2C_WWW@dato dato `*.4f  1 a 1 wreg ]
 "75
@@ -344,17 +356,17 @@
 "8 D:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S493 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S522 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S498 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S501 . 4 `l 1 i 4 0 `d 1 f 4 0 `S493 1 fAsBytes 4 0 `S498 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S501  1 a 4 26 ]
+[s S527 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S530 . 4 `l 1 i 4 0 `d 1 f 4 0 `S522 1 fAsBytes 4 0 `S527 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S530  1 a 4 26 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 20 ]
-[s S570 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S599 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S573 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S570 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S573  1 a 2 30 ]
+[u S602 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S599 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S602  1 a 2 30 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 25 ]
 "11
@@ -438,8 +450,8 @@
 {
 "16
 } 0
-"97 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
+"98 D:\UVG\Digital\Mini Proyecto 2\Alterno\newmain.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"102
+"103
 } 0

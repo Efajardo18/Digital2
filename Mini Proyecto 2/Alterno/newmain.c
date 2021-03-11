@@ -37,9 +37,9 @@ void UARTSendString(const char* str, const uint8_t max_length);
 
 
 void main(void) {
+    __delay_ms(1000);
     setup();
     I2C_Master_Init(100000);    //INICIAMOS LA COMUNICACIÓN I2C
-    __delay_ms(1000);
     I2C_ConfigM();
     while(1)
     {

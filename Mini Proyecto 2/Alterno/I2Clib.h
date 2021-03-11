@@ -49,7 +49,7 @@ unsigned short I2C_Master_Read(unsigned short a)
     while(!SSPIF);
     temp = SSPBUF;
     I2C_Master_Wait();
-    ACKDT = (a)?0:1;
+    ACKDT = (a)?1:0;
     ACKEN = 1;
     return temp;
 }
@@ -82,7 +82,7 @@ void I2C_WWW(float *dato){
     I2C_Master_Stop();
     int e[3];
     for(int i = 0; i<3 ; i++) e[i]=((int) d[2*i]<<8)|((int)d[2*i+1]);
-    dato[0] = d[0]*0.000598;
-    dato[1] = d[0]*0.000598;
-    dato[2] = d[0]*0.000598;
+    dato[0] = ((float)e[0])*0.000598;
+    dato[1] = ((float)e[1])*0.000598;
+    dato[2] = ((float)e[2])*0.000598;
 }
