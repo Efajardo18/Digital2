@@ -20,28 +20,30 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
 #define _XTAL_FREQ 4000000
+#define I2C_BaudRate 100000
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "I2Clib.h"
 
-uint8_t I2DATO;
+float   I2gato[3];
 uint8_t ledsu;
 
 void setup(void);
+void UARTSendChar(const char c);
+void UARTSendString(const char* str, const uint8_t max_length);
+
 
 void main(void) {
     setup();
-    //I2C_Master_Init(100000);    //INICIAMOS LA COMUNICACIÓN I2C
+    I2C_Master_Init(100000);    //INICIAMOS LA COMUNICACIÓN I2C
+    __delay_ms(1000);
+    I2C_ConfigM();
     while(1)
     {
-        //I2C_Master_Start();
-        //I2C_Master_Write(0x29);
-        //I2DATO = I2C_Master_Read(0);
-        //I2C_Master_Stop();
-        //__delay_ms(200);
-        switch(ledsu){
+        switch(ledsu){              //ANALIZAR EL DATO PROVENIENTE DE SP32
             case 0:
                 PORTB=0;
                 break;
@@ -55,7 +57,19 @@ void main(void) {
                 PORTB=3;
                 break;
         }
-        TXREG = I2DATO;
+        I2C_WWW(I2gato);
+        char *regs;
+        int  status;
+        regs=ftoa(I2gato[0],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        regs=ftoa(I2gato[1],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        regs=ftoa(I2gato[2],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        UARTSendChar('\n');
         __delay_ms(5);
     }
     return;
@@ -64,7 +78,7 @@ void main(void) {
 void setup(void) {
     TRISA   = 0b00000000;
     TRISB   = 0b00000000;
-    TRISC   = 0b11011000;
+    TRISC   = 0b11011000; //    [7:6] UART, [4:3]I2C
     TRISD   = 0b00000000;
     TRISE   = 0b00000000;
     ANSEL   = 0b00000000;
@@ -72,18 +86,34 @@ void setup(void) {
     PORTA   = 0b00000000;
     PORTB   = 0b00000000;
     PORTD   = 0b00000000;
-    I2DATO  = 0;
     ledsu   = 0;
-    INTCON  = 0b11000000;
-    PIE1    = 0b00100000;
-    TXSTA   = 0b00100100;
-    RCSTA   = 0b10010000;
-    SPBRG   = 0b00011001;
+    INTCON  = 0b11000000; //    GIE, PEIE ACTIVOS
+    PIE1    = 0b00100000; //    RCIE ACTIVO 
+    TXSTA   = 0b00100100; //    TXEN Y BRGH ACTIVO 
+    RCSTA   = 0b10010000; //    SPEN, CREN ACTIVOS
+    SPBRG   = 0b00011001; //    25
 }
 
 void __interrupt() ISR(void) {
     if (PIR1bits.RCIF == 1) {
         ledsu=RCREG;
         PIR1bits.RCIF = 0;    
+    }
+}
+//*https://github.com/asct20/PIC_UART_lib
+void UARTSendChar(const char c) {
+    while (TXSTAbits.TRMT == 0);    // Wait for buffer to be empty
+    TXREG = c;
+}
+
+/**
+ * Send a string, until '\0' is read, up to max_length characters
+ * @param str
+ * @param max_length
+ */
+void UARTSendString(const char* str, const uint8_t max_length) {
+    int i = 0;
+    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+        UARTSendChar(str[i]);
     }
 }

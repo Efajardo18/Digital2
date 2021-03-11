@@ -31,6 +31,7 @@
 
 
 
+
 # 1 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2511,7 +2512,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 24 "newmain.c" 2
+# 25 "newmain.c" 2
 
 # 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2646,9 +2647,10 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 25 "newmain.c" 2
+# 26 "newmain.c" 2
 
-# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+
 
 
 
@@ -2657,16 +2659,91 @@ typedef uint16_t uintptr_t;
 
 
 typedef unsigned size_t;
-# 4 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+# 5 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 2 3
 
 # 1 "D:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+# 6 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 2 3
+
+typedef unsigned short wchar_t;
 
 
 
 
 
 
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 27 "newmain.c" 2
+
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
+# 11 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
 # 1 "D:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdarg.h" 1 3
 
 
@@ -2745,7 +2822,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 26 "newmain.c" 2
+# 28 "newmain.c" 2
 
 # 1 "./I2Clib.h" 1
 
@@ -2787,6 +2864,7 @@ void I2C_Master_Write(unsigned d)
 {
     I2C_Master_Wait();
     SSPBUF = d;
+    while(!PIR1bits.SSPIF);
 }
 
 unsigned short I2C_Master_Read(unsigned short a)
@@ -2795,30 +2873,64 @@ unsigned short I2C_Master_Read(unsigned short a)
     I2C_Master_Wait();
     RCEN = 1;
     I2C_Master_Wait();
+    while(!SSPIF);
     temp = SSPBUF;
     I2C_Master_Wait();
-    ACKDT = (a)?1:0;
+    ACKDT = (a)?0:1;
     ACKEN = 1;
     return temp;
 }
-# 27 "newmain.c" 2
+
+void I2C_ConfigM(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x6B);
+    I2C_Master_Write(0x01);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x19);
+    I2C_Master_Write(0x07);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+}
+
+void I2C_WWW(float *dato){
+    char d[6];
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x3B);
+    I2C_Master_RepeatedStart();
+    I2C_Master_Write(0xD1);
+    for(int i = 0;i<5;i++)d[i]=I2C_Master_Read(0);
+    d[5]=I2C_Master_Read(1);
+    I2C_Master_Stop();
+    int e[3];
+    for(int i = 0; i<3 ; i++) e[i]=((int) d[2*i]<<8)|((int)d[2*i+1]);
+    dato[0] = d[0]*0.000598;
+    dato[1] = d[0]*0.000598;
+    dato[2] = d[0]*0.000598;
+}
+# 29 "newmain.c" 2
 
 
-uint8_t I2DATO;
+float I2gato[3];
 uint8_t ledsu;
 
 void setup(void);
+void UARTSendChar(const char c);
+void UARTSendString(const char* str, const uint8_t max_length);
+
 
 void main(void) {
     setup();
-
+    I2C_Master_Init(100000);
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    I2C_ConfigM();
     while(1)
     {
-
-
-
-
-
         switch(ledsu){
             case 0:
                 PORTB=0;
@@ -2833,7 +2945,19 @@ void main(void) {
                 PORTB=3;
                 break;
         }
-        TXREG = I2DATO;
+        I2C_WWW(I2gato);
+        char *regs;
+        int status;
+        regs=ftoa(I2gato[0],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        regs=ftoa(I2gato[1],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        regs=ftoa(I2gato[2],&status);
+        UARTSendString(regs,6);
+        UARTSendChar(' ');
+        UARTSendChar('\n');
         _delay((unsigned long)((5)*(4000000/4000.0)));
     }
     return;
@@ -2850,7 +2974,6 @@ void setup(void) {
     PORTA = 0b00000000;
     PORTB = 0b00000000;
     PORTD = 0b00000000;
-    I2DATO = 0;
     ledsu = 0;
     INTCON = 0b11000000;
     PIE1 = 0b00100000;
@@ -2863,5 +2986,22 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
     if (PIR1bits.RCIF == 1) {
         ledsu=RCREG;
         PIR1bits.RCIF = 0;
+    }
+}
+
+void UARTSendChar(const char c) {
+    while (TXSTAbits.TRMT == 0);
+    TXREG = c;
+}
+
+
+
+
+
+
+void UARTSendString(const char* str, const uint8_t max_length) {
+    int i = 0;
+    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+        UARTSendChar(str[i]);
     }
 }

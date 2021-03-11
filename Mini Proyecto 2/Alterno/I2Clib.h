@@ -37,6 +37,7 @@ void I2C_Master_Write(unsigned d)
 {
     I2C_Master_Wait();
     SSPBUF = d;
+    while(!PIR1bits.SSPIF);
 }
 
 unsigned short I2C_Master_Read(unsigned short a)
@@ -45,9 +46,43 @@ unsigned short I2C_Master_Read(unsigned short a)
     I2C_Master_Wait();
     RCEN = 1;
     I2C_Master_Wait();
+    while(!SSPIF);
     temp = SSPBUF;
     I2C_Master_Wait();
-    ACKDT = (a)?1:0;
+    ACKDT = (a)?0:1;
     ACKEN = 1;
     return temp;
+}
+
+void I2C_ConfigM(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x6B);
+    I2C_Master_Write(0x01);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x19);
+    I2C_Master_Write(0x07);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+}
+
+void I2C_WWW(float *dato){
+    char d[6];
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x3B);
+    I2C_Master_RepeatedStart();
+    I2C_Master_Write(0xD1);
+    for(int i = 0;i<5;i++)d[i]=I2C_Master_Read(0);
+    d[5]=I2C_Master_Read(1);
+    I2C_Master_Stop();
+    int e[3];
+    for(int i = 0; i<3 ; i++) e[i]=((int) d[2*i]<<8)|((int)d[2*i+1]);
+    dato[0] = d[0]*0.000598;
+    dato[1] = d[0]*0.000598;
+    dato[2] = d[0]*0.000598;
 }

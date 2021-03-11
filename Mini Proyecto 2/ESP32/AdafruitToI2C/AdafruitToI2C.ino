@@ -20,6 +20,7 @@ int count = 0;
 int ledR  = 0;
 int ledB  = 0;
 int wea   = 0;
+String qq = "";
 
 #define IO_LOOP_DELAY 5000
 unsigned long lastUpdate = 0;
@@ -50,16 +51,22 @@ void setup() {
 void loop() {
 
   io.run();
-  if(Serial2.available()){
-    
-    count=Serial2.read();
+  while(Serial2.available()){
+    char ww = Serial2.read();
+    if(char != '\n'){
+      qq.concat(ww);
+    }
+    else{
+      Serial.println(qq);
+      break;
+    }
     Serial2.write(wea);
     }
 
   if (millis() > (lastUpdate + IO_LOOP_DELAY)) {
    // Serial.print("sending -> ");
     //Serial.println(count);
-    counter->save(count);
+    counter->save(qq);
     lastUpdate = millis();
   }
 
